@@ -1,6 +1,6 @@
 package com.tencentcloud.faceid.example;
 
-import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson2.JSON;
 import com.tencentcloud.faceid.CryptoUtil;
 import com.tencentcloud.faceid.core.Algorithm;
 import com.tencentcloud.faceid.core.CryptoProvider;
@@ -17,7 +17,7 @@ import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
 
-public class DetectAIFakeFaces {
+public class DetectAIFakeFacesEN {
     private static final String REGION = "ap-jakarta";// TODO Region
     private static final String SECRET_ID = ""; // TODO Tencent Cloud Secret ID
     private static final String SECRET_KEY = ""; // TODO Tencent Cloud Secret Key

@@ -1,6 +1,6 @@
 package com.tencentcloud.faceid.example;
 
-import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson2.JSON;
 import com.tencentcloud.faceid.core.Algorithm;
 import com.tencentcloud.faceid.CryptoUtil;
 import com.tencentcloudapi.common.Credential;

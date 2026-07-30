@@ -1,7 +1,7 @@
 package com.tencentcloud.faceid.example;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson2.JSON;
+import com.alibaba.fastjson2.JSONObject;
 import com.tencentcloud.faceid.core.Algorithm;
 import com.tencentcloud.faceid.CryptoUtil;
 import com.tencentcloudapi.common.Credential;
@@ -37,8 +37,8 @@ public class PhoneVerification {
         Credential credential = new Credential(SECRET_ID, SECRET_KEY);
         FaceidClient faceidClient = new FaceidClient(credential, REGION);
         PhoneVerificationRequest request = PhoneVerificationRequest.fromJsonString(reqJson, PhoneVerificationRequest.class);
-        JSONObject jsonObject = JSONObject.parseObject(reqJson);
-        Encryption encryption = JSONObject.parseObject(JSONObject.toJSONString(jsonObject.get("Encryption")), Encryption.class);
+        JSONObject jsonObject = JSON.parseObject(reqJson);
+        Encryption encryption = JSON.parseObject(JSON.toJSONString(jsonObject.get("Encryption")), Encryption.class);
         request.setCiphertextBlob(encryption.getCiphertextBlob());
         request.setEncryptList(encryption.getEncryptList());
         request.setIv(encryption.getIv());

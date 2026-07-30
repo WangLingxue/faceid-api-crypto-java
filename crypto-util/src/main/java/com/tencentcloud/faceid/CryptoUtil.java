@@ -106,7 +106,9 @@ public class CryptoUtil {
             encryption.setTagList(tagList); // SM4GCM算法生成的验证消息
 
             map.put("Encryption", encryption);
-            map.put("EncryptedBody", entity.ciphertext);
+            // 注意：EncryptedBody 需为 Base64 字符串。fastjson2 默认会把 byte[] 序列化为数字数组
+            // （fastjson1 默认序列化为 Base64 字符串），此处显式编码以保证跨 JSON 库行为一致。
+            map.put("EncryptedBody", Base64.getEncoder().encodeToString(entity.ciphertext));
             return map;
         }
 
